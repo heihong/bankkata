@@ -1,0 +1,16 @@
+{
+  "name": "bank-kata",
+  "version": "1.0.0",
+  "description": "bank kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc --reporter html --reporter text npm test"
+  },
+  "author": "Heihong Traing",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nyc": "^14.1.1"
+  }
+}
