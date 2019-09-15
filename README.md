@@ -24,4 +24,5 @@ Think of your personal bank account experience When in doubt, go for the simples
 
 # Test
 * Run `npm install` to download package
+* Run `npm test` to execute the unit tests`.
 * Run `npm run coverage` to execute the unit tests and see the coverage`.
