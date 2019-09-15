@@ -28,7 +28,7 @@ describe('Test class Statement', function () {
     });
 
     it('should test makeHeader return the result', function () {
-        let result = "Transaction for heihong \n";
+        let result = "Transaction for heihong\n";
         assert.equal(result, statement.makeHeader());
     });
 
@@ -53,5 +53,13 @@ describe('Test class Statement', function () {
             'Deposit 300 the 14/11/2019 and the balance is 500\n' +
             'Withdrawal 50 the 14/9/2019 and the balance is 450\n';
         assert.equal(result, statement.makeContainer());
+    });
+
+    it('should test makeStatement return result', function () {
+        let result = 'Transaction for heihong\n' +
+            'Deposit 200 the 14/9/2019 and the balance is 200\n'+
+            'Deposit 300 the 14/11/2019 and the balance is 500\n' +
+            'Withdrawal 50 the 14/9/2019 and the balance is 450\n';
+        assert.equal(result, statement.makeStatement());
     });
 });

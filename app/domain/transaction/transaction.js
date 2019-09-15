@@ -14,10 +14,6 @@ class Transaction{
         return this.account;
     }
 
-
-
-
-
 }
 
 module.exports = Transaction;

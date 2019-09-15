@@ -3,8 +3,8 @@
 class Withdrawal{
 
     constructor(amount, date) {
-        this.amount = amount || "";
-        this.date = date;
+        this.amount = amount || 0;
+        this.date = date || new Date();
     }
 
     getAmount(){
@@ -12,8 +12,11 @@ class Withdrawal{
     }
 
     getDateOperation() {
-        let [day, month, year] = this.date.split("/");
-        return new Date(year, month, day);
+        if(!(this.date instanceof Date)){
+            let [day, month, year] = this.date.split("/");
+            return new Date(year, month, day);
+        }
+        return this.date;
     }
 
     getAction(){

@@ -9,7 +9,7 @@ class Statement{
     }
 
     makeHeader() {
-        return `Transaction for ${this.client.getName()} \n`;
+        return `Transaction for ${this.client.getName()}\n`;
     }
 
     printDate(transaction){
@@ -38,6 +38,9 @@ class Statement{
         return result;
     }
 
+    makeStatement(){
+        return this.makeHeader() + this.makeContainer();
+    }
 }
 
 module.exports = Statement;
