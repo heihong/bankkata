@@ -24,7 +24,7 @@ describe('Test class Statement', function () {
         statement.setStatements(deposit1, deposit1.setBalance());
     });
 
-    it('should test getOperations and return 2', function () {
+    it('should test getStatements and return result', function () {
         let result = `Deposit 100 the ${new Date()} and the balance is 100 \n`+
             `Withdrawal 50 the ${new Date()} and the balance is 50 \n`+
             `Deposit 200 the ${new Date()} and the balance is 250 \n`;

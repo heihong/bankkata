@@ -17,9 +17,7 @@ describe('Test class Operation', function () {
         account = new Account("heihong");
         client = new Client("heihong", account);
         deposit = new Operation(Deposit, 100, account);
-        withdrawal = new Operation(Withdrawal, 50, account)
-        statement = new Statement();
-        statement.setStatements(deposit, deposit.setBalance());
+        withdrawal = new Operation(Withdrawal, 50, account);
     });
 
     it('should test getTypeOperation and return Deposit', function () {
@@ -35,12 +33,7 @@ describe('Test class Operation', function () {
     });
 
     it('should test getAmount and return 100', function () {
-        assert.equal(100, deposit.getAmount());
+        assert.equal(50, withdrawal.getAmount());
     });
-
-
-
-
-
 
 });
