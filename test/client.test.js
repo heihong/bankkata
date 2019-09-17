@@ -25,7 +25,7 @@ describe('Test class Client', function () {
 
     it('should test getName and return ', function () {
 
-        assert.equal("", client1.getName())
+        assert.equal("", client1.getName());
     });
 
     it('should test getAccount and return null', function () {
