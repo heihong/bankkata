@@ -1,24 +1,34 @@
-'use strict';
+
+const TransactionFactory = require('../transaction/transactionFactory')
+
+
 
 class Account{
 
-    constructor(nameClient) {
-        this.nameClient = nameClient || "";
-        this.amount = 0;
+    constructor() {
+        this.history = [];
     }
 
-    getNameClient() {
-        return this.nameClient;
+    applyDeposit(amount){
+        let transaction = TransactionFactory.getInstanceDeposit(amount);
+        this.history.push(transaction);
     }
 
-    getAmount(){
-        return this.amount;
+    applyWithdrawal(amount){
+        let transaction = TransactionFactory.getInstanceWithdrawal(amount);
+        this.history.push(transaction);
     }
 
-    setAmount(amount){
-        this.amount = amount;
+    get balance(){
+        return this.history.reduce((balance, transaction) => {
+            if (transaction.isDeposit){
+                return balance + transaction.amount;
+            }
+            if(transaction.isWithdrawal){
+                return balance - transaction.amount;
+            }
+        }, 0)
     }
-
 }
 
 module.exports = Account;
